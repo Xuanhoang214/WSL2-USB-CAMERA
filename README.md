@@ -144,8 +144,7 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     ```sh
     lsusb
     ```
-When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
-
+    
 16. When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
 
     * So let's run dmesg on the WSL2 side
