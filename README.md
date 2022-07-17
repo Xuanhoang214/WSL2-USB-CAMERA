@@ -85,10 +85,9 @@ This file needs to be copied to the Windows side.
 
 I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
 
-    ```sh
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
-    ```
+    
 ## Starting with the created Linux Kernel
 9. In order to use the Linux kernel that you created yourself with WSL2, see . wslconfig" file should be created in the Windows user folder (windows user).
     ```sh
