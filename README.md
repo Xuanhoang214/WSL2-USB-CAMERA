@@ -78,8 +78,8 @@ The bzImage displayed in this last line will be the Linux kernel that was built 
 
 This file needs to be copied to the Windows side.
 8. Create a folder called wsl in the Windows user directory (windows user) and copy it there.
-It will instantly display your username (terminal windows): 
 
+It will instantly display your username (terminal windows): 
     ```sh
     echo %username%
     ```
