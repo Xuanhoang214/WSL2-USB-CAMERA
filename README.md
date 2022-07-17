@@ -113,10 +113,11 @@ If the date and time displayed like this is the date and time of the build, it i
 Once you've confirmed that WSL2 is working with the Linux kernel that supports V4L2 and UVC, try a USB camera.
 
 This time, we are using the following USB camera.
-First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbipd]: 
 
+    * First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbipd]: 
+    ```sh
     winget install usbipd
-
+    ```
 12. Show list usb connected on windows
     ```sh
     usbipd wsl list
@@ -134,7 +135,7 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     ```sh
     usbipd wsl attach -b 1-1
     ```
-    
+
 wsl detach can be used to stop sharing the device. The device will also automatically stop sharing if it is unplugged or the computer is restarted.
 
     usbipd wsl detach -b 1-1
