@@ -84,7 +84,6 @@ It will instantly display your username (terminal windows):
     echo %username%
     ```
 I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
-
     ```sh
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
@@ -95,7 +94,6 @@ I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
     nano /mnt/c/Users/<windows user>/.wslconfig
     ```
 and the contents of this .wslconfig are as follows:
-
     ```sh
     [wsl2]
     kernel=C:\\Users\\<window user>\\wsl\\bzImage-v4l2-uvc
@@ -118,16 +116,16 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     ```sh
     winget install usbipd
     ```
-11. Show list usb connected on windows
+12. Show list usb connected on windows
     ```sh
     usbipd wsl list
     ```
-12. Next up is work on WSL
+13. Next up is work on WSL
     ```sh
     sudo apt-get install linux-tools-5.4.0-77-generic hwdata
     sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20
     ```
-13. In this, find the device (USB camera) you want to use in WSL and remember its "BUSID"
+14. In this, find the device (USB camera) you want to use in WSL and remember its "BUSID"
     ```sh
     usbipd wsl attach -b "BUSID"
     ```
@@ -139,30 +137,30 @@ wsl detach can be used to stop sharing the device. The device will also automati
     ```sh
     usbipd wsl detach -b 1-1
     ```
-14. From within WSL, run lsusb to list the attached USB devices. You should see the device you just attached and be able to interact with it using normal Linux tools.
+15. From within WSL, run lsusb to list the attached USB devices. You should see the device you just attached and be able to interact with it using normal Linux tools.
     ```sh
     lsusb
     ```
 When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
-15. So let's run dmesg on the WSL2 side. If there is a line that begins with "uvcvideo" as follows, it is recognized as a UVC camera
+16. So let's run dmesg on the WSL2 side. If there is a line that begins with "uvcvideo" as follows, it is recognized as a UVC camera
     `$  "uvcvideo: Found UVC ..."
 If the line below is displayed. Don't worry, you need to change the webcam and you're done:
     `$ "UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround."
-16. When the USB camera is successfully recognized, a file (device node) starting with video is created under /dev.
+17. When the USB camera is successfully recognized, a file (device node) starting with video is created under /dev.
     ```sh
     ls -l /dev/video*
     ```
-17. With this permission, only users with root privileges can use the USB camera. This is inconvenient, so change the group to video so that the group can also be read and written.
+18. With this permission, only users with root privileges can use the USB camera. This is inconvenient, so change the group to video so that the group can also be read and written.
     ```sh
     sudo chgrp video /dev/video*
     sudo chmod g+rw /dev/video*
     ls -l /dev/video*
-18. Verifying in v4l-ctl:
+19. Verifying in v4l-ctl:
     ```sh
     sudo apt-get install v4l-utils
     v4l2-ctl --all
     ```
-19. USB camera image display:
+20. USB camera image display:
     ```sh
     sudo apt-get install guvcview
     guvcview
