@@ -1,5 +1,5 @@
 # WSL2-USB-CAMERA
-How to connect WSL2 with WSL2?
+How to connect camera with WSL2?
 
 Building your own USB/IP enabled WSL 2 kernel 5.10.102.1
 # Build kernel 5.10.102.1
@@ -159,7 +159,7 @@ If there is a line that begins with "uvcvideo" as follows, it is recognized as a
 
     "uvcvideo: Found UVC ..."
 
-If the line below is displayed. Don't worry, you need to change the webcam and you're done:
+If the line below is displayed. Don't worry, you need to change the camera and you're done:
 
     "UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround."
 
