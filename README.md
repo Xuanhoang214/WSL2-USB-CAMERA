@@ -143,14 +143,15 @@ wsl detach can be used to stop sharing the device. The device will also automati
     lsusb
     ```
 When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
+
 16. So let's run dmesg on the WSL2 side. If there is a line that begins with "uvcvideo" as follows, it is recognized as a UVC camera
 
-    `$  "uvcvideo: Found UVC ..."
+    "uvcvideo: Found UVC ..."
 
 If the line below is displayed. Don't worry, you need to change the webcam and you're done:
 
-    `$ "UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround."
-    
+    "UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround."
+
 17. When the USB camera is successfully recognized, a file (device node) starting with video is created under /dev.
     ```sh
     ls -l /dev/video*
