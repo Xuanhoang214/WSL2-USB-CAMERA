@@ -145,8 +145,9 @@ wsl detach can be used to stop sharing the device. The device will also automati
 When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
 
 16. So let's run dmesg on the WSL2 side. If there is a line that begins with "uvcvideo" as follows, it is recognized as a UVC camera
-
+    ```sh
     "uvcvideo: Found UVC ..."
+    ```
 
 If the line below is displayed. Don't worry, you need to change the webcam and you're done:
 
@@ -177,5 +178,6 @@ This time, I tried to use a USB camera in WSL2.
 Since the Linux kernel of WSL2 is not V4L2 or UVC enabled, you need to compile and replace the Linux kernel yourself to use the USB camera.
 If you change the Linux kernel, you can use a USB camera in WSL2 by combining it with USBIPD-WIN. However, it is a pity that there seems to be a difficulty in the transfer speed.
 Good luck!
+
 [usbipd]: https://github.com/dorssel/usbipd-win
 [wsl-kernel]: https://github.com/microsoft/WSL2-Linux-Kernel/tree/linux-msft-wsl-5.10.102.1
