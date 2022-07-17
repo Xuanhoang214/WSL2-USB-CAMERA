@@ -82,8 +82,9 @@ This file needs to be copied to the Windows side.
     ```sh
     echo %username%
     ```
-    
+
 I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
+
     ```sh
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
