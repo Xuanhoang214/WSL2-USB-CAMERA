@@ -77,6 +77,7 @@ Building takes quite a while. If it finally becomes "Kernel: arch/x86/boot/bzIma
 The bzImage displayed in this last line will be the Linux kernel that was built and generated.
 
 This file needs to be copied to the Windows side.
+
 8. Create a folder called wsl in the Windows user directory (windows user) and copy it there.
 
 It will instantly display your username (terminal windows): 
