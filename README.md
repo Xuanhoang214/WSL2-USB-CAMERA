@@ -50,11 +50,16 @@ This creates a directory called WSL2-Linux-Kernel, and the source code of the sp
     make menuconfig KCONFIG_CONFIG=Microsoft/config-wsl
     ```
 Note: Enable the following options. All should be enabled as built-in, not modules. The option should have an "*" next to it rather than an "M":
-*「Device Drivers」→「Multimedia support」→「Filter media drivers」enable \n
-*「Device Drivers」→「Multimedia support」→「Media device types」→「Cameras and video grabbers」enable
-*「Device Drivers」→「Multimedia support」→「Media core support」→「Video4Linux options」→「V4L2 sub-device userspace API」enable
-*「Device Drivers」→「Multimedia support」→「Media core support」→「Media drivers」→「Media USB Adapters」→「USB Video Class (UVC)」and「UVC input events device support」enable
-*「Device Drivers」→「Multimedia support」→「Media core support」→「Media drivers」→「Media USB Adapters」→「GSPCA based webcams」enable
+*「Device Drivers」→「Multimedia support」→「Filter media drivers」enable.
+
+*「Device Drivers」→「Multimedia support」→「Media device types」→「Cameras and video grabbers」enable.
+
+*「Device Drivers」→「Multimedia support」→「Media core support」→「Video4Linux options」→「V4L2 sub-device userspace API」enable.
+
+*「Device Drivers」→「Multimedia support」→「Media core support」→「Media drivers」→「Media USB Adapters」→「USB Video Class (UVC)」and「UVC input events device support」enable.
+
+*「Device Drivers」→「Multimedia support」→「Media core support」→「Media drivers」→「Media USB Adapters」→「GSPCA based webcams」enable.
+
 The setting is overwritten and saved in "Microsoft/config-wsl".
 ## Build
 Build using the settings you saved earlier.
