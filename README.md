@@ -2,10 +2,15 @@
 Building your own USB/IP enabled WSL 2 kernel 5.10.102.1
 # Build kernel 5.10.102.1
 I used a tool called USBIPD-WIN to recognize USB devices on Windows from WSL2 Linux.
+
 However, USB cameras are not yet available in WSL2. This time I would like to solve this problem.
+
 When using a USB camera on Linux, it is generally possible to use a mechanism called Video for Linux 2 (Video4Linux 2, V4L2).
+
 Many recent USB cameras are compatible with USB Video Class (UVC), and it seems that there are many cases where USB cameras can be used in combination with V4L2 and UVC drivers.
+
 Both "V4L2" and "UVC driver" are functions within the Linux Kernel, and the Linux Kernel must be made (compiled) with these features enabled.
+
 Let's find out what happens with the WSL2 kernel I'm using. By the way, the Linux kernel version is as follows.
 
 1. Check kernel version:
