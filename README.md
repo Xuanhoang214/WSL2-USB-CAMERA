@@ -130,7 +130,7 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     ```sh
     usbipd wsl attach -b "BUSID"
     ```
-Example, in my case
+    * Example, in my case
 
     usbipd wsl attach -b 1-1
 
