@@ -114,10 +114,10 @@ Once you've confirmed that WSL2 is working with the Linux kernel that supports V
 
 This time, we are using the following USB camera.
 
-    * First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbipd]: 
-    ```sh
+First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbipd]: 
+
     winget install usbipd
-    ```
+
 12. Show list usb connected on windows
     ```sh
     usbipd wsl list
