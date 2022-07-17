@@ -87,17 +87,17 @@ I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
 
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
-    
+
 ## Starting with the created Linux Kernel
 9. In order to use the Linux kernel that you created yourself with WSL2, see . wslconfig" file should be created in the Windows user folder (windows user).
     ```sh
     nano /mnt/c/Users/<windows user>/.wslconfig
     ```
 and the contents of this .wslconfig are as follows:
-    ```sh
+
     [wsl2]
     kernel=C:\\Users\\<window user>\\wsl\\bzImage-v4l2-uvc
-    ```
+
 10. Once you have created the .wslconfig file, type the following command in PowerShell (or in a Windows terminal) to stop WSL2:
     ```sh
     wsl --shutdown
@@ -113,9 +113,9 @@ Once you've confirmed that WSL2 is working with the Linux kernel that supports V
 
 This time, we are using the following USB camera.
 First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbipd]: 
-    ```sh
+
     winget install usbipd
-    ```
+
 12. Show list usb connected on windows
     ```sh
     usbipd wsl list
@@ -130,13 +130,13 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     usbipd wsl attach -b "BUSID"
     ```
 Example, in my case
-    ```sh
+
     usbipd wsl attach -b 1-1
-    ```
+
 wsl detach can be used to stop sharing the device. The device will also automatically stop sharing if it is unplugged or the computer is restarted.
-    ```sh
+
     usbipd wsl detach -b 1-1
-    ```
+
 15. From within WSL, run lsusb to list the attached USB devices. You should see the device you just attached and be able to interact with it using normal Linux tools.
     ```sh
     lsusb
