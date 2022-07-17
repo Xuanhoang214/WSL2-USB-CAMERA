@@ -55,6 +55,7 @@ This creates a directory called WSL2-Linux-Kernel, and the source code of the sp
     make menuconfig KCONFIG_CONFIG=Microsoft/config-wsl
     ```
 Note: Enable the following options. All should be enabled as built-in, not modules. The option should have an "*" next to it rather than an "M":
+
 *「Device Drivers」→「Multimedia support」→「Filter media drivers」enable.
 
 *「Device Drivers」→「Multimedia support」→「Media device types」→「Cameras and video grabbers」enable.
@@ -67,39 +68,44 @@ Note: Enable the following options. All should be enabled as built-in, not modul
 
 The setting is overwritten and saved in "Microsoft/config-wsl".
 ## Build
-Build using the settings you saved earlier.
+7. Build using the settings you saved earlier.
     ```sh
     make -j $(nproc) KCONFIG_CONFIG=Microsoft/config-wsl
     ```
 Building takes quite a while. If it finally becomes "Kernel: arch/x86/boot/bzImage is ready" as follows, the build is successful.
+
 The bzImage displayed in this last line will be the Linux kernel that was built and generated.
+
 This file needs to be copied to the Windows side.
-7. Create a folder called wsl in the Windows user directory (windows user) and copy it there.
+8. Create a folder called wsl in the Windows user directory (windows user) and copy it there.
 It will instantly display your username (terminal windows): 
+
     ```sh
     echo %username%
     ```
 I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
+
     ```sh
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
     ```
 ## Starting with the created Linux Kernel
-8. In order to use the Linux kernel that you created yourself with WSL2, see . wslconfig" file should be created in the Windows user folder (windows user).
+9. In order to use the Linux kernel that you created yourself with WSL2, see . wslconfig" file should be created in the Windows user folder (windows user).
     ```sh
     nano /mnt/c/Users/<windows user>/.wslconfig
     ```
 and the contents of this .wslconfig are as follows:
+
     ```sh
     [wsl2]
     kernel=C:\\Users\\<window user>\\wsl\\bzImage-v4l2-uvc
     ```
-9. Once you have created the .wslconfig file, type the following command in PowerShell (or in a Windows terminal) to stop WSL2:
+10. Once you have created the .wslconfig file, type the following command in PowerShell (or in a Windows terminal) to stop WSL2:
     ```sh
     wsl --shutdown
     ```
 Then start WSL2 again.
-10. When WSL2 starts, let's display the detailed information of Linux Kernel.
+11. When WSL2 starts, let's display the detailed information of Linux Kernel.
     ```sh
     uname -a
     ```
