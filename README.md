@@ -32,7 +32,7 @@ Therefore, it can be seen that the USB camera is not available in this Linux ker
 ## Get tools for compilation
 Various tools are required to compile the Linux kernel.
 
-4. In Ubuntu, you can install the necessary set of tools with the following command.
+4. In WSL, you can install the necessary set of tools with the following command.
     ```sh
     sudo apt-get update
     sudo apt-get install build-essential flex bison dwarves libssl-dev libelf-dev git libncurses-dev
@@ -41,13 +41,15 @@ You are now ready to get the tool.
 ## Get Source
 Next, get the source code of the Linux kernel.
 
-5. Clone kernel branch [linux-msft-wsl-5.10.102.1] [wsl-kernel]
+5. Clone kernel branch linux-msft-wsl-5.10.102.1
     ```sh
     mkdir wsl-kernel
     cd wsl-kernel
     git clone https://github.com/microsoft/WSL2-Linux-Kernel.git -b linux-msft-wsl-5.10.102.1 --depth 1
     ```
 This creates a directory called WSL2-Linux-Kernel, and the source code of the specified version of Linux Kernel is extracted in it.
+
+You can see the source code [here][wsl-kernel]
 ## Configuration
 6.  Run menuconfig to select kernel features to add.
     ```sh
@@ -144,7 +146,7 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     ```sh
     lsusb
     ```
-    
+
 16. When a USB camera is attached on the Windows side, it looks as if a USB camera has been connected from WSL2.
 
     * So let's run dmesg on the WSL2 side
