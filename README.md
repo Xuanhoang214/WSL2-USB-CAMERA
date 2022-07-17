@@ -83,11 +83,11 @@ This file needs to be copied to the Windows side.
     echo %username%
     ```
 
-I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
-
+    * I copied the created Linux Kernel with the file name bzImage-v4l2-uvc.
+    ```sh
     mkdir -p /mnt/c/Users/<windows user>/wsl
     cp arch/x86/boot/bzImage /mnt/c/Users/<windows user>/wsl/bzImage-v4l2-uvc
-
+    ```
 ## Starting with the created Linux Kernel
 9. In order to use the Linux kernel that you created yourself with WSL2, see . wslconfig" file should be created in the Windows user folder (windows user).
     ```sh
@@ -136,10 +136,10 @@ First,  use the Windows Package Manager install usbipd, detail [usbipd-win][usbi
     usbipd wsl attach -b 1-1
     ```
 
-wsl detach can be used to stop sharing the device. The device will also automatically stop sharing if it is unplugged or the computer is restarted.
-
+    * wsl detach can be used to stop sharing the device. The device will also automatically stop sharing if it is unplugged or the computer is restarted.
+    ```sh
     usbipd wsl detach -b 1-1
-
+    ```
 15. From within WSL, run lsusb to list the attached USB devices. You should see the device you just attached and be able to interact with it using normal Linux tools.
     ```sh
     lsusb
